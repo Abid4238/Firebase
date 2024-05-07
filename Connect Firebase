@@ -1,0 +1,29 @@
+btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String S1= e1.getText().toString().trim();
+                String S2= e2.getText().toString().trim();
+                String S3= e3.getText().toString().trim();
+                String S4= e4.getText().toString().trim();
+
+                data d1 = new data(S1,S2,S3);
+
+                FirebaseDatabase db = FirebaseDatabase.getInstance();
+                DatabaseReference root = db.getReference("em");
+                root.child(S4).setValue(d1);
+
+
+            }
+        });
+
+
+
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                FirebaseDatabase db = FirebaseDatabase.getInstance();
+//                DatabaseReference root = db.getReference();
+//                root.setValue(e1.getText().toString());
+//            }
+//        });
